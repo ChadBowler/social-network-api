@@ -19,11 +19,6 @@ const reactionSchema = new Schema(
   
 );
 
-// Create a virtual property `reactionCount` that gets the amount of comments per post
-reactionSchema.virtual('reactionCount').get(function () {
-  return this.reactions.length;
-});
-
 const Reaction = model('reaction', reactionSchema);
 
 module.exports = Reaction;
