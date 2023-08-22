@@ -28,11 +28,11 @@ const userSchema = new Schema(
         ref: 'user',
       }]
   },
-  {
-    toJSON: {
-      getters: true,
-    },
-  }
+//   {
+//     toJSON: {
+//       getters: true,
+//     },
+//   }
 );
 
 // Create a virtual property `friendCount` that gets the amount of friends per post
@@ -42,4 +42,4 @@ userSchema.virtual('friendCount').get(function () {
 
 const User = model('user', userSchema);
 
-module.exports = User;
+module.exports = { User };

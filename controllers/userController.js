@@ -1,6 +1,7 @@
 // ObjectId() method for converting userId string into an ObjectId for querying database
 const { ObjectId } = require('mongoose').Types;
-const { User, Thought } = require('../models');
+const { User } = require('../models/User');
+const { Thought } = require('../models/Thought');
 
 
 const friendCount = async () => {
@@ -50,6 +51,7 @@ module.exports = {
       const user = await User.create(req.body);
       res.json(user);
     } catch (err) {
+        console.error(err);
       res.status(500).json(err);
     }
   },
@@ -58,6 +60,7 @@ module.exports = {
       const user = await User.findOneAndUpdate(req.body);
       res.json(user);
     } catch (err) {
+        console.error(err);
       res.status(500).json(err);
     }
   },
