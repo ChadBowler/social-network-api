@@ -8,7 +8,10 @@ const thoughtSchema = new Schema(
         requried: true,
         minLength: 1,
         maxLength: 280
-    
+    },
+    createdAt: {
+        type: Date,
+        default: Date.now
     },
     username: {
         type: Schema.Types.ObjectId,
@@ -24,9 +27,7 @@ const thoughtSchema = new Schema(
         reactionBody: {
             type: String,
             requried: true,
-            minLength: 1,
             maxLength: 280
-        
         },
         username: {
             type: Schema.Types.ObjectId,
@@ -38,11 +39,11 @@ const thoughtSchema = new Schema(
             default: Date.now
         }
       }
-    ],
-    
-  },
-  
+    ]
+  }  
 );
+
+//TODO: create a getter method to format the timestamp on query(reaction, and thought)
 
 // Create a virtual property `reactionCount` that gets the amount of comments per post
 thoughtSchema.virtual('reactionCount').get(function () {
