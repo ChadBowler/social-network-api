@@ -28,6 +28,11 @@ const userSchema = new Schema(
         ref: 'user',
       }]
   },
+  {
+    toJSON: {
+      getters: true,
+    },
+  }
 );
 
 // Create a virtual property `friendCount` that gets the amount of friends per post
