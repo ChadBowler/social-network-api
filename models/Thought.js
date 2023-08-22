@@ -15,10 +15,30 @@ const thoughtSchema = new Schema(
         ref: 'user',
         required: true
     },
-    reactions: [{
-        type: Schema.Types.ObjectId,
-        ref: 'reaction',
-      }],
+    reactions: [
+        {
+        reactionId:{
+            type: Schema.Types.ObjectId,
+            default: () => new Types.ObjectId(),
+        },
+        reactionBody: {
+            type: String,
+            requried: true,
+            minLength: 1,
+            maxLength: 280
+        
+        },
+        username: {
+            type: Schema.Types.ObjectId,
+            ref: 'user',
+            required: true
+        },
+        createdAt: {
+            type: Date,
+            default: Date.now
+        }
+      }
+    ],
     
   },
   
