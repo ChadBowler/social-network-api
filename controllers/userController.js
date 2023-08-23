@@ -70,7 +70,7 @@ module.exports = {
     }
   },
 
-  // Add an thought to a user
+  // Add a friend to a user
   async addFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
@@ -90,12 +90,12 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-  // Remove thought from a user
-  async removeThought(req, res) {
+  // Remove friend from a user
+  async removeFriend(req, res) {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { thought: { thoughtId: req.params.thoughtId } } },
+        { $pull: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       );
 
