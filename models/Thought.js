@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 // Schema to create Thought model
 const thoughtSchema = new Schema(
@@ -30,7 +30,7 @@ const thoughtSchema = new Schema(
             maxLength: 280
         },
         username: {
-            type: Schema.Types.ObjectId,
+            type: Schema.Types.String,
             ref: 'user',
             required: true
         },

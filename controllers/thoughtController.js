@@ -32,9 +32,10 @@ module.exports = {
   async createThought(req, res) {
     try {
       const thought = await Thought.create(req.body);
+
       const user = await User.findOneAndUpdate(
         { username: req.body.username },
-        { $addToSet: { thoughts: new ObjectId(thought) } },
+        { $addToSet: { thoughts: thought } },
         { runValidators: true, new: true }
       );
       res.status(200).json(user);
@@ -51,9 +52,7 @@ module.exports = {
       if (!thought) {
         return res.status(404).json({ message: 'No thought with that ID' });
       }
-
-      await User.deleteMany({ _id: { $in: thought.Users } });
-      res.json({ message: 'thought and Users deleted!' });
+      res.json({ message: 'thought deleted!' });
     } catch (err) {
       res.status(500).json(err);
     }
@@ -76,28 +75,36 @@ module.exports = {
       res.status(500).json(err);
     }
   },
-//   async createReaction(req, res) {
-//     try {
-//       const reaction = await Reaction.create(req.body);
-//       res.json(reaction);
-//     } catch (err) {
-//       console.log(err);
-//       return res.status(500).json(err);
-//     }
-//   },
-//   // Delete a reaction
-//   async deleteReaction(req, res) {
-//     try {
-//       const reaction = await Reaction.findOneAndDelete({ _id: req.params.reactionId });
+  async createReaction(req, res) {
+    try {
+      const reaction = await Thought.findOneAndUpdate(
+        { _id: req.params.thoughtId },
+        { $addToSet: { 
+            reactions: { 
+              reactionBody: req.body.reactionBody,
+              username: req.body.username}
+         } },
+        { runValidators: true, new: true }
+        );
 
-//       if (!reaction) {
-//         return res.status(404).json({ message: 'No reaction with that ID' });
-//       }
+      res.json(reaction);
+    } catch (err) {
+      console.log(err);
+      return res.status(500).json(err);
+    }
+  },
+  // Delete a reaction
+  async deleteReaction(req, res) {
+    try {
+      const reaction = await Thought.findOneAndUpdate({ _id: req.params.thoughtId });
 
-//       await User.deleteMany({ _id: { $in: reaction.Users } });
-//       res.json({ message: 'reaction and Users deleted!' });
-//     } catch (err) {
-//       res.status(500).json(err);
-//     }
-//   },
+      if (!reaction) {
+        return res.status(404).json({ message: 'No reaction with that ID' });
+      }
+
+      res.json({ message: 'reaction deleted!' });
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  },
 };
