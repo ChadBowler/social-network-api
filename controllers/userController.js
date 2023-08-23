@@ -4,15 +4,6 @@ const { User } = require('../models/User');
 const { Thought } = require('../models/Thought');
 
 
-const friendCount = async () => {
-  // Your code here
-  const numberOfFriends = await User.aggregate([
-    { $count: 'numberOfFriends'}
-  ]);
-  return numberOfFriends;
-}
-
-
 module.exports = {
   // Get all users
   async getUsers(req, res) {
@@ -20,7 +11,6 @@ module.exports = {
       const users = await User.find();
       const userObj = {
         users,
-        friendCount: await friendCount()
     };
       return res.json(userObj);
     } catch (err) {
@@ -73,7 +63,7 @@ module.exports = {
         return res.status(404).json({ message: 'No such user exists' })
       }
 
-      res.json({ message: 'user successfully deleted' });
+      res.json({ message: 'User successfully deleted' });
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
@@ -81,13 +71,11 @@ module.exports = {
   },
 
   // Add an thought to a user
-  async addThought(req, res) {
+  async addFriend(req, res) {
     try {
-      console.log('You are adding a thought');
-      console.log(req.body);
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $addToSet: { thoughts: req.body } },
+        { $addToSet: { friends: req.params.friendId } },
         { runValidators: true, new: true }
       );
 

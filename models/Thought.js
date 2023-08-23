@@ -40,16 +40,19 @@ const thoughtSchema = new Schema(
         },
       }
     ],
-    // toJSON: {
-    //     getters: true,
-    // },
-      
-  }  
+    
+  },
+  {
+    toJSON: {
+     virtuals: true,
+    },
+    id: false,
+   } 
 );
 
 //TODO: create a getter method to format the timestamp on query(reaction, and thought)
 
-// Create a virtual property `reactionCount` that gets the amount of comments per post
+// Create a virtual property `reactionCount` that gets the amount of reactions per thought
 thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
