@@ -1,4 +1,5 @@
 const { Schema, model, Types } = require('mongoose');
+const format = require('date-fns/format');
 
 // Schema to create Thought model
 const thoughtSchema = new Schema(
@@ -11,7 +12,8 @@ const thoughtSchema = new Schema(
     },
     createdAt: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        get: formatDate
     },
     username: {
         type: Schema.Types.String,
@@ -36,27 +38,32 @@ const thoughtSchema = new Schema(
         },
         createdAt: {
             type: Date,
-            default: Date.now
+            default: Date.now,
+            get: formatDate
         },
       }
     ],
     
   },
   {
+    //make sure the virtuals and getters are included in responses, etc.
     toJSON: {
      virtuals: true,
+     getters: true
     },
     id: false,
    } 
 );
 
-//TODO: create a getter method to format the timestamp on query(reaction, and thought)
-
 // Create a virtual property `reactionCount` that gets the amount of reactions per thought
 thoughtSchema.virtual('reactionCount').get(function () {
   return this.reactions.length;
 });
-
+// Change the default format of the date
+function formatDate(date) {
+  return format(new Date(date), 'PPPppp')
+};
+  
 const Thought = model('thought', thoughtSchema);
 
 module.exports = { Thought };
