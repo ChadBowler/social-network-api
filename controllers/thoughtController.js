@@ -1,4 +1,3 @@
-const { ObjectId } = require('mongoose').Types;
 const { User } = require('../models/User');
 const { Thought } = require('../models/Thought');
 
@@ -34,7 +33,7 @@ module.exports = {
   async createThought(req, res) {
     try {
       const thought = await Thought.create(req.body);
-
+//push the thought to the associated user by username
       const user = await User.findOneAndUpdate(
         { username: req.body.username },
         { $addToSet: { thoughts: thought } },
@@ -79,13 +78,16 @@ module.exports = {
   },
   async createReaction(req, res) {
     try {
+      //find the related thought, and push the new reaction
       const reaction = await Thought.findOneAndUpdate(
         { _id: req.params.thoughtId },
         { $addToSet: { 
             reactions: { 
               reactionBody: req.body.reactionBody,
-              username: req.body.username}
-         } },
+              username: req.body.username
+            }
+          } 
+        },
         { runValidators: true, new: true }
         );
 
@@ -98,9 +100,8 @@ module.exports = {
   // Delete a reaction
   async deleteReaction(req, res) {
     try {
-     
+      //find the reaction by grabbing the thought, then pulling the reaction from the array by it's id
       const reaction = await Thought.findOneAndUpdate(
-        
         { _id: req.params.thoughtId },
         { $pull: { 
             reactions: {
