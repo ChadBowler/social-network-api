@@ -79,7 +79,7 @@ Here is a [link](https://drive.google.com/file/d/1kZp377jX7B5O8SrilMJJphB20CZv7c
 
 ## Questions
 
-* Checkout my personal [portfolio](www.chadbowler.com) to see my other projects!
+* Checkout my personal [portfolio](http://www.chadbowler.com) to see my other projects!
 
 * Checkout my [Github](https://www.github.com/ChadBowler)! 
 
