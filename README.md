@@ -35,6 +35,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 
 
  - `DELETE` - `http://localhost:3001/api/users/:id` - Removes a user from the database.
+ > **_NOTE:_** Removing a user will also remove any thoughts by that user.
 
 ### Friends
  - `POST` - `http://localhost:3001/api/users/:id/friends/:friendId` - Adds a friend to the selected user. No JSON is needed for this request. The user's id and the friend's id will be pulled from the url.
