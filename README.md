@@ -21,7 +21,9 @@ This social network API is a backend application using Node.js, Express, and Mon
 ## Usage
 
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
- - `http://localhost:3001/api/users` - Can `GET` all users or `POST` a new user.
+ - `GET` - `http://localhost:3001/api/users` - Allows you to view all users. 
+ - `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
+        
  - `http://localhost:3001/api/users/:id` - Can `GET` a single user, `PUT`(update) a current user, or `DELETE` a user.
  - `http://localhost:3001/api/users/:id/friends/:friendId` - Will allow you to add (`POST`) a friend to the selected user, or remove (`DELETE`) a friend from the user's list.
  - `http://localhost:3001/api/thoughts` - Can `GET` all thoughts or `POST` a new thought.
