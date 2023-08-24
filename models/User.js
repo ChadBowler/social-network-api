@@ -7,7 +7,8 @@ const userSchema = new Schema(
         type: String,
         uniqe: true,
         requried: true,
-        trim: true
+        lowercase: true,
+        trim: true,
     },
     email: {
         type: String,
@@ -31,6 +32,7 @@ const userSchema = new Schema(
   {
    toJSON: {
     virtuals: true,
+    getters: true
    },
    id: false,
   }
@@ -39,6 +41,11 @@ const userSchema = new Schema(
 // Create a virtual property `friendCount` that gets the amount of friends the user has
 userSchema.virtual('friendCount').get(function () {
   return this.friends.length;
+});
+
+userSchema.pre('save', function (next) {
+  this.username = this.username.replace(" ", "");
+  next();
 });
 
 const User = model('user', userSchema);

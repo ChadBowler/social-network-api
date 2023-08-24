@@ -27,6 +27,7 @@ This social network API is a backend application using Node.js, Express, and Mon
  - 
    ![sna-post-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/16b21fc2-23d5-4620-bc8b-86e1104942d1)
 
+> **_NOTE:_** Usernames will be converted to lowercase and all spaces will be removed.
 
  - `GET` - `http://localhost:3001/api/users/:id` - Retrieves a single user, using the `_id` property from the database.
  - `PUT` - `http://localhost:3001/api/users/:id` - Updates a current user, using the following format for the request:
@@ -47,6 +48,8 @@ This social network API is a backend application using Node.js, Express, and Mon
  - `POST` - `http://localhost:3001/api/thoughts` - Adds a new thought to the database, using the following format for the request:
  - 
    ![sna-post-thought-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/7bc5a77f-f1f2-48f2-bfef-ac29004a3874)
+
+> **_NOTE:_** All thoughts and reactions are restricted to a 280 character maximum.
 
  - `GET` - `http://localhost:3001/api/thoughts/:thoughtId` - Retrieves  a single thought.
  - `PUT` - `http://localhost:3001/api/thoughts/:thoughtId` - Updates a thought, using the following format for the request:

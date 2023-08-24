@@ -57,7 +57,12 @@ const thoughtSchema = new Schema(
 
 // Create a virtual property `reactionCount` that gets the number of reactions per thought
 thoughtSchema.virtual('reactionCount').get(function () {
-  return this.reactions.length;
+  try {
+    return this.reactions.length;
+  } catch (error) {
+    
+  }
+  
 });
 // Change the default format of the date
 function formatDate(date) {
