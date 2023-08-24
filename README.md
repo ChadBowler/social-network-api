@@ -47,6 +47,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 
 - `DELETE` - `http://localhost:3001/api/thoughts/:thoughtId` - Removes a thought from the database.
 - `POST` - `http://localhost:3001/api/thoughts/:thoughtId/reactions` - Adds a new reaction to the thought referenced in the url, using the following format:
+- 
   ![sna-post-reaction-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/e05eb114-853e-4e9e-a085-3c67c4490532)
 
  - `DELETE` - `http://localhost:3001/api/thoughts/thoughtId/reactions/:reactionId` - Removes a reaction from the thought referenced in the url.
