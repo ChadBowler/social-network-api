@@ -24,11 +24,13 @@ This social network API is a backend application using Node.js, Express, and Mon
 ### User Routes
  - `GET` - `http://localhost:3001/api/users` - Retrieves all users. 
  - `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
+ - 
    ![sna-post-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/16b21fc2-23d5-4620-bc8b-86e1104942d1)
 
 
  - `GET` - `http://localhost:3001/api/users/:id` - Retrieves a single user, using the `_id` property from the database.
  - `PUT` - `http://localhost:3001/api/users/:id` - Updates a current user, using the following format for the request:
+ - 
    ![sna-update-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/0d7ca1ce-d675-45c2-b0bc-3af0bd14dd28)
 
 
@@ -42,6 +44,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 ### Thought Routes
  - `GET` - `http://localhost:3001/api/thoughts` - Retrieves all thoughts
  - `POST` - `http://localhost:3001/api/thoughts` - Adds a new thought to the database, using the following format for the request:
+ - 
    ![sna-post-thought-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/7bc5a77f-f1f2-48f2-bfef-ac29004a3874)
 
  - `GET` - `http://localhost:3001/api/thoughts/:thoughtId` - Retrieves  a single thought.
