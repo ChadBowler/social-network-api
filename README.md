@@ -30,7 +30,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 
  - `GET` - `http://localhost:3001/api/users/:id` - Retrieves a single user, using the `_id` property from the database.
  - `PUT` - `http://localhost:3001/api/users/:id` - Updates a current user, using the following format for the request:
- - 
+  
    ![sna-update-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/0d7ca1ce-d675-45c2-b0bc-3af0bd14dd28)
 
 
