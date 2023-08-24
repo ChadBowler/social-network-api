@@ -23,7 +23,6 @@ This social network API is a backend application using Node.js, Express, and Mon
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
  - `GET` - `http://localhost:3001/api/users` - Allows you to view all users. 
  - `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
- - 
             ![sna-post-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/16b21fc2-23d5-4620-bc8b-86e1104942d1)
 
 
