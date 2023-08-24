@@ -8,7 +8,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 ## Table of Contents
 
 - [Installation](#Installation)
-- [Usage](#Usage)
+- [Usage](#using-the-api)
 - [License](#License)
 - [Features](#Features)
 - [Contributing](#Contributing)
@@ -18,7 +18,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 
 * To use this API you would need to clone the repository, and use it locally.
 
-## Usage
+## Using the API
 
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
 ### User Routes
