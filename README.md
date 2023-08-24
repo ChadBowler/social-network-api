@@ -21,17 +21,31 @@ This social network API is a backend application using Node.js, Express, and Mon
 ## Usage
 
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
- - `GET` - `http://localhost:3001/api/users` - Allows you to view all users. 
+ - `GET` - `http://localhost:3001/api/users` - Retrieves all users. 
  - `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
             ![sna-post-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/16b21fc2-23d5-4620-bc8b-86e1104942d1)
 
 
- - `http://localhost:3001/api/users/:id` - Can `GET` a single user, `PUT`(update) a current user, or `DELETE` a user.
- - `http://localhost:3001/api/users/:id/friends/:friendId` - Will allow you to add (`POST`) a friend to the selected user, or remove (`DELETE`) a friend from the user's list.
- - `http://localhost:3001/api/thoughts` - Can `GET` all thoughts or `POST` a new thought.
- - `http://localhost:3001/api/thoughts/:thoughtId` - Will allow you to `GET` a single thought, `PUT` to update a thought, or `DELETE` a thought.
- - `http://localhost:3001/api/thoughts/thoughtId/reactions` - Will allow you to `POST` a new reaction to the referenced thought.
- - `http://localhost:3001/api/thoughts/thoughtId/reactions/reactionId` - Will allow you to send a `DELETE` request to remove a reaction from a thought.
+ - `GET` - `http://localhost:3001/api/users/:id` - Retrieves a single user, using the `_id` property from the database.
+ - `PUT` - `http://localhost:3001/api/users/:id` - Updates a current user, using the following format for the request:
+
+
+ - `DELETE` - `http://localhost:3001/api/users/:id` - Removes a user from the database.
+
+ - `POST` - `http://localhost:3001/api/users/:id/friends/:friendId` - Adds a friend to the selected user. No JSON is needed for this request. The user's id and the friend's id will be pulled from the url.
+ - `DELETE` - `http://localhost:3001/api/users/:id/friends/:friendId` - Removes a friend from the user's list.
+ > **_NOTE:_** Adding a friend to a user's list will NOT automatically add the user to the friend's list. Likewise, removing a friend from a user's list will NOT automatically remove the user from the friend's list.
+
+ - `GET` - `http://localhost:3001/api/thoughts` - Retrieves all thoughts
+ - `POST` - `http://localhost:3001/api/thoughts` - Adds a new thought to the database, using the following format for the request:
+
+ - `GET` - `http://localhost:3001/api/thoughts/:thoughtId` - Retrieves  a single thought.
+ - `PUT` - `http://localhost:3001/api/thoughts/:thoughtId` - Updates a thought, using the following format for the request:
+
+- `DELETE` - `http://localhost:3001/api/thoughts/:thoughtId` - Removes a thought from the database.
+- `POST` - `http://localhost:3001/api/thoughts/:thoughtId/reactions` - Adds a new reaction to the thought referenced in the url, using the following format:
+
+ - `DELETE` - `http://localhost:3001/api/thoughts/thoughtId/reactions/:reactionId` - Removes a reaction from the thought referenced in the url.
 
 
 ## License
