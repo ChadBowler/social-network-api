@@ -23,7 +23,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
  - `GET` - `http://localhost:3001/api/users` - Allows you to view all users. 
  - `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
-        ![sna-post-user](https://github.com/ChadBowler/social-network-api/assets/127648744/a8f598b6-0cf1-43cb-b788-a365b3387f9a | width=100)
+        ![sna-post-user](https://github.com/ChadBowler/social-network-api/assets/127648744/a8f598b6-0cf1-43cb-b788-a365b3387f9a=462x235)
 
  - `http://localhost:3001/api/users/:id` - Can `GET` a single user, `PUT`(update) a current user, or `DELETE` a user.
  - `http://localhost:3001/api/users/:id/friends/:friendId` - Will allow you to add (`POST`) a friend to the selected user, or remove (`DELETE`) a friend from the user's list.
