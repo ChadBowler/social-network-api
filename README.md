@@ -65,6 +65,10 @@ This social network API is a backend application using Node.js, Express, and Mon
  - `DELETE` - `http://localhost:3001/api/thoughts/thoughtId/reactions/:reactionId` - Removes a reaction from the thought referenced in the url.
 
 
+## Video Walkthrough
+
+Here is a [link](https://drive.google.com/file/d/1kZp377jX7B5O8SrilMJJphB20CZv7crz/view?usp=sharing) to the walkthrough video of the application.
+
 ## License
 
 * This application is licenced under the [MIT License](https://opensource.org/licenses/MIT)
@@ -75,7 +79,9 @@ This social network API is a backend application using Node.js, Express, and Mon
 
 ## Questions
 
-* Checkout my Github! [ChadBowler](https://www.github.com/ChadBowler)
+* Checkout my personal [portfolio](www.chadbowler.com) to see my other projects!
+
+* Checkout my [Github](https://www.github.com/ChadBowler)! 
 
 * If you have questions, feel free to contact me at: cbowlerdev@gmail.com
 
