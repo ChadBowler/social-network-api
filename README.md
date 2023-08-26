@@ -70,7 +70,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 ❌ `DELETE` - `http://localhost:3001/api/thoughts/thoughtId/reactions/:reactionId` - Removes a reaction from the thought referenced in the url.
 
 
-## Video Walkthrough
+## Video Walkthrough  🎥
 
 Here is a [link](https://drive.google.com/file/d/1kZp377jX7B5O8SrilMJJphB20CZv7crz/view?usp=sharing) to the walkthrough video of the application.
 
