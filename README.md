@@ -23,6 +23,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 * Once you have the code locally, type "npm run start" to create a connection to the server. Use an API client to use the one of the following routes:
 ### User Routes
  ✅ `GET` - `http://localhost:3001/api/users` - Retrieves all users. 
+ 
  ☑️ `POST` - `http://localhost:3001/api/users` - Allows you to add a new user, using the following format for the request:
   
    ![sna-post-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/16b21fc2-23d5-4620-bc8b-86e1104942d1)
@@ -30,6 +31,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 > **_NOTE:_** Usernames will be converted to lowercase and all spaces will be removed.
 
  ✅ `GET` - `http://localhost:3001/api/users/:id` - Retrieves a single user, using the `_id` property from the database.
+ 
  ☑️ `PUT` - `http://localhost:3001/api/users/:id` - Updates a current user, using the following format for the request:
   
    ![sna-update-user-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/0d7ca1ce-d675-45c2-b0bc-3af0bd14dd28)
@@ -40,11 +42,13 @@ This social network API is a backend application using Node.js, Express, and Mon
 
 ### Friends
  ☑️ `POST` - `http://localhost:3001/api/users/:id/friends/:friendId` - Adds a friend to the selected user. No JSON is needed for this request. The user's id and the friend's id will be pulled from the url.
+ 
  ❌ `DELETE` - `http://localhost:3001/api/users/:id/friends/:friendId` - Removes a friend from the user's list.
  > **_NOTE:_** Adding a friend to a user's list will NOT automatically add the user to the friend's list. Likewise, removing a friend from a user's list will NOT automatically remove the user from the friend's list.
 
 ### Thought Routes
- ✅ `GET` - `http://localhost:3001/api/thoughts` - Retrieves all thoughts
+ ✅ `GET` - `http://localhost:3001/api/thoughts` - Retrieves all thoughts.
+ 
  ☑️ `POST` - `http://localhost:3001/api/thoughts` - Adds a new thought to the database, using the following format for the request:
   
    ![sna-post-thought-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/7bc5a77f-f1f2-48f2-bfef-ac29004a3874)
@@ -52,6 +56,7 @@ This social network API is a backend application using Node.js, Express, and Mon
 > **_NOTE:_** All thoughts and reactions are restricted to a 280 character maximum.
 
  ✅ `GET` - `http://localhost:3001/api/thoughts/:thoughtId` - Retrieves  a single thought.
+ 
  ☑️ `PUT` - `http://localhost:3001/api/thoughts/:thoughtId` - Updates a thought, using the following format for the request:
    ![sna-update-thought-cropped](https://github.com/ChadBowler/social-network-api/assets/127648744/dba0c630-5ed6-4e78-abdc-734e49be272b)
 
